@@ -6,18 +6,17 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 require('dotenv').config()
 
-
 const userRouter = require('./routers/UserRoutes')
 
 //CREATING AN INSTANCE OF EXPRESS
 const app = express()
 
 //CORE MIDDLEWARES
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:['http://localhost:3000'], credentials:true}))
+app.use(cors())
 
 //CUSTOM MIDDLEWARES
 app.use(userRouter)
