@@ -21,5 +21,4 @@ app.use(cors())
 //CUSTOM MIDDLEWARES
 app.use(userRouter)
 
-
 app.listen(process.env.BACKEND_PORT, ()=>{console.log(`\nSERVER RUNNING ON ${process.env.BACKEND_PORT}`); database()} )
